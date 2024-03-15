@@ -47,6 +47,7 @@
     "gender": "Gender",
     "position": "Position",
     "image": "Avatar",
-    "save": "Save User"
+    "save": "Save User",
+    "edit": "Save changes"
   }
 }
