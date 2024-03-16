@@ -45,14 +45,14 @@ class UserRedux extends Component {
       this.setState({
         positionArr: arrPositions,
         position:
-          arrPositions && arrPositions.length > 0 ? arrPositions[0].key : "",
+          arrPositions && arrPositions.length > 0 ? arrPositions[0].keyMap : "",
       });
     }
     if (prevProps.genderRedux !== this.props.genderRedux) {
       let arrGenders = this.props.genderRedux;
       this.setState({
         genderArr: arrGenders,
-        gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].key : "",
+        gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].keyMap : "",
       });
     }
 
@@ -60,7 +60,7 @@ class UserRedux extends Component {
       let arrRoles = this.props.roleRedux;
       this.setState({
         roleArr: arrRoles,
-        role: arrRoles && arrRoles.length > 0 ? arrRoles[0].key : "",
+        role: arrRoles && arrRoles.length > 0 ? arrRoles[0].keyMap : "",
       });
     }
 
@@ -68,7 +68,6 @@ class UserRedux extends Component {
       let arrPositions = this.props.positionRedux;
       let arrGenders = this.props.genderRedux;
       let arrRoles = this.props.roleRedux;
-
       this.setState({
         email: "",
         password: "",
@@ -77,9 +76,9 @@ class UserRedux extends Component {
         phoneNumber: "",
         address: "",
         position:
-          arrPositions && arrPositions.length > 0 ? arrPositions[0].key : "",
-        gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].key : "",
-        role: arrRoles && arrRoles.length > 0 ? arrRoles[0].key : "",
+          arrPositions && arrPositions.length > 0 ? arrPositions[0].keyMap : "",
+        gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].keyMap : "",
+        roleId: arrRoles && arrRoles.length > 0 ? arrRoles[0].keyMap : "",
         avatar: "",
         action: CRUD_ACTIONS.CREATE,
         previewImgURL: "",
@@ -112,7 +111,7 @@ class UserRedux extends Component {
   handleSaveUser = () => {
     let isValid = this.checkValidateInput();
     if (isValid === false) return;
-
+    console.log(this.state.role);
     let { action } = this.state;
     if (action === CRUD_ACTIONS.CREATE) {
       this.props.createNewUser({
@@ -200,7 +199,6 @@ class UserRedux extends Component {
     let roles = this.state.roleArr;
     let positions = this.state.positionArr;
     let language = this.props.language;
-
     let {
       email,
       password,
@@ -316,7 +314,7 @@ class UserRedux extends Component {
                     genders.length > 0 &&
                     genders.map((item, index) => {
                       return (
-                        <option key={index} value={item.key}>
+                        <option key={index} value={item.keyMap}>
                           {language === LANGUAGES.VI
                             ? item.valueVi
                             : item.valueEn}
@@ -340,7 +338,7 @@ class UserRedux extends Component {
                     positions.length > 0 &&
                     positions.map((item, index) => {
                       return (
-                        <option key={index} value={item.key}>
+                        <option key={index} value={item.keyMap}>
                           {language === LANGUAGES.VI
                             ? item.valueVi
                             : item.valueEn}
@@ -362,7 +360,7 @@ class UserRedux extends Component {
                     roles.length > 0 &&
                     roles.map((item, index) => {
                       return (
-                        <option key={index} value={item.key}>
+                        <option key={index} value={item.keyMap}>
                           {language === LANGUAGES.VI
                             ? item.valueVi
                             : item.valueEn}

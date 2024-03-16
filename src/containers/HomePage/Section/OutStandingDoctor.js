@@ -1,95 +1,80 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Slider from "react-slick";
+import { FormattedMessage } from "react-intl";
+import * as actions from "../../../store/actions";
+import { LANGUAGES } from "../../../utils";
 
 class OutStanding extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      arrDoctors: [],
+    };
+  }
+
+  componentDidMount() {
+    this.props.loadTopDoctors();
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevProps.topDoctorsRedux !== this.props.topDoctorsRedux) {
+      this.setState({
+        arrDoctors: this.props.topDoctorsRedux,
+      });
+    }
+  }
+
   render() {
+    let { language } = this.props;
+    let arrDoctors = this.state.arrDoctors;
+
+    console.log("topDoctorsRedux", this.props.topDoctorsRedux);
     return (
       <div className="section-share section-outstanding-doctor">
         <div className="section-container">
           <div className="section-header">
-            <span className="title-section">Cơ sở y tế nổi bật</span>
-            <button className="btn-section">Xem thêm</button>
+            <span className="title-section">
+              <FormattedMessage id="home-page.out-standing-doctor" />
+            </span>
+            <button className="btn-section">
+              <FormattedMessage id="home-page.more-info" />
+            </button>
           </div>
           <div className="section-body">
             <Slider {...this.props.setting}>
-              <div className="section-customize">
-                <div className="customize-border">
-                  <div className="outer-bg">
-                    <div className="bg-image section-outstanding-doctor" />
-                  </div>
-                  <div className="position text-center">
-                    <div>Giáo sư, Tiến Sĩ Hùng</div>
-                    <div>Cơ Xương Khớp 1</div>
-                  </div>
-                </div>
-              </div>
-              <div className="section-customize">
-                <div className="customize-border">
-                  <div className="outer-bg">
-                    <div className="bg-image section-outstanding-doctor" />
-                  </div>
-                  <div className="position text-center">
-                    <div>Giáo sư, Tiến Sĩ Hùng</div>
-                    <div>Cơ Xương Khớp 2</div>
-                  </div>
-                </div>
-              </div>
-              <div className="section-customize">
-                <div className="customize-border">
-                  <div className="outer-bg">
-                    <div className="bg-image section-outstanding-doctor" />
-                  </div>
-                  <div className="position text-center">
-                    <div>Giáo sư, Tiến Sĩ Hùng</div>
-                    <div>Cơ Xương Khớp 3</div>
-                  </div>
-                </div>
-              </div>
-              <div className="section-customize">
-                <div className="customize-border">
-                  <div className="outer-bg">
-                    <div className="bg-image section-outstanding-doctor" />
-                  </div>
-                  <div className="position text-center">
-                    <div>Giáo sư, Tiến Sĩ Hùng</div>
-                    <div>Cơ Xương Khớp 4</div>
-                  </div>
-                </div>
-              </div>
-              <div className="section-customize">
-                <div className="customize-border">
-                  <div className="outer-bg">
-                    <div className="bg-image section-outstanding-doctor" />
-                  </div>
-                  <div className="position text-center">
-                    <div>Giáo sư, Tiến Sĩ Hùng</div>
-                    <div>Cơ Xương Khớp 5</div>
-                  </div>
-                </div>
-              </div>
-              <div className="section-customize">
-                <div className="customize-border">
-                  <div className="outer-bg">
-                    <div className="bg-image section-outstanding-doctor" />
-                  </div>
-                  <div className="position text-center">
-                    <div>Giáo sư, Tiến Sĩ Hùng</div>
-                    <div>Cơ Xương Khớp 6</div>
-                  </div>
-                </div>
-              </div>
-              <div className="section-customize">
-                <div className="customize-border">
-                  <div className="outer-bg">
-                    <div className="bg-image section-outstanding-doctor" />
-                  </div>
-                  <div className="position text-center">
-                    <div>Giáo sư, Tiến Sĩ Hùng</div>
-                    <div>Cơ Xương Khớp 7</div>
-                  </div>
-                </div>
-              </div>
+              {arrDoctors &&
+                arrDoctors.length > 0 &&
+                arrDoctors.map((item, index) => {
+                  let imageBase64 = "";
+                  if (item.image) {
+                    imageBase64 = new Buffer(item.image, "base64").toString(
+                      "binary"
+                    );
+                  }
+                  let nameVi = `${item.positionData.valueVi} ${item.firstName} ${item.lastName} `;
+                  let nameEn = `${item.positionData.valueEn} ${item.firstName} ${item.lastName} `;
+                  return (
+                    <div className="section-customize" key={index}>
+                      <div className="customize-border">
+                        <div className="outer-bg">
+                          <div
+                            className="bg-image section-outstanding-doctor"
+                            style={{
+                              backgroundImage: `url(${imageBase64})`,
+                            }}
+                          />
+                        </div>
+                        <div className="position text-center">
+                          <div>
+                            {language === LANGUAGES.VI ? nameVi : nameEn}
+                          </div>
+                          <div>Cơ Xương Khớp 1</div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
             </Slider>
           </div>
         </div>
@@ -101,11 +86,15 @@ class OutStanding extends Component {
 const mapStateToProps = (state) => {
   return {
     isLoggedIn: state.user.isLoggedIn,
+    topDoctorsRedux: state.admin.topDoctors,
+    language: state.app.language,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    loadTopDoctors: () => dispatch(actions.fetchTopDoctor()),
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(OutStanding);

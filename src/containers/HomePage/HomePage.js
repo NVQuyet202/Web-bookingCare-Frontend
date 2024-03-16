@@ -12,13 +12,16 @@ import "slick-carousel/slick/slick-theme.css";
 import "./HomePage.scss";
 
 class HomePage extends Component {
+  handleAfterChange = () => {};
+
   render() {
     let setting = {
       dots: false,
-      infinite: true,
+      infinite: false,
       speed: 500,
       slidesToShow: 4,
       slidesToScroll: 1,
+      afterChange: this.handleAfterChange,
     };
 
     return (
