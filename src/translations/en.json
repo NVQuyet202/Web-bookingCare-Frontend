@@ -35,6 +35,10 @@
       "handbook": "Handbook",
       "manage-speciality": "Manage speciality",
       "manage-handbook": "Manage Handbook"
+    },
+    "doctor": {
+      "manage-schedule": "Manage schedule",
+      "schedule": "Schedule"
     }
   },
   "manage-user": {
@@ -53,5 +57,18 @@
   "home-page": {
     "out-standing-doctor": "Outstanding doctor",
     "more-info": "More Info"
+  },
+  "manage-doctor": {
+    "create": "CREATE DOCTOR INFORMATION",
+    "choose-doctor": "Choose a doctor:",
+    "introduce": "Introductory information:",
+    "save-infor": "Save infor",
+    "create-infor": "Create infor"
+  },
+  "manage-schedule": {
+    "title": "Manage doctor's examination plan",
+    "choose-doctor": "Choose a doctor:",
+    "choose-schedule": "Choose an appointment:",
+    "save-infor": "Save infor"
   }
 }

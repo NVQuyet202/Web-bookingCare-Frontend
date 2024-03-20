@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import { FormattedMessage } from "react-intl";
 import * as actions from "../../../store/actions";
 import { LANGUAGES } from "../../../utils";
+import { withRouter } from "react-router";
 
 class OutStanding extends Component {
   constructor(props) {
@@ -25,11 +26,15 @@ class OutStanding extends Component {
     }
   }
 
+  handleViewDetailDoctor = (doctor) => {
+    console.log("handleViewDetailDoctor", doctor);
+    this.props.history.push(`/detail-doctor/${doctor.id}`);
+  };
+
   render() {
     let { language } = this.props;
     let arrDoctors = this.state.arrDoctors;
 
-    console.log("topDoctorsRedux", this.props.topDoctorsRedux);
     return (
       <div className="section-share section-outstanding-doctor">
         <div className="section-container">
@@ -55,7 +60,11 @@ class OutStanding extends Component {
                   let nameVi = `${item.positionData.valueVi} ${item.firstName} ${item.lastName} `;
                   let nameEn = `${item.positionData.valueEn} ${item.firstName} ${item.lastName} `;
                   return (
-                    <div className="section-customize" key={index}>
+                    <div
+                      className="section-customize"
+                      key={index}
+                      onClick={() => this.handleViewDetailDoctor(item)}
+                    >
                       <div className="customize-border">
                         <div className="outer-bg">
                           <div
@@ -97,4 +106,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OutStanding);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(OutStanding)
+);
