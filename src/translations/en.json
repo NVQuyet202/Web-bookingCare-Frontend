@@ -67,7 +67,7 @@
     "create-infor": "Create infor",
     "price": "Choose price",
     "payment": "Choose payment method",
-    "province": "Choose a province",
+    "province": "Province",
     "clinic-name": "Clinic name",
     "clinic-address": "Clinic address",
     "note": "Note"
@@ -83,7 +83,12 @@
       "schedule": "Schedule",
       "no-schedule": "Doctors don't have appointments during this time, please choose another time!",
       "choose": "Choose",
-      "book-free": "and book (free)"
+      "book-free": "and book (free)",
+      "address-check": "ADDRESS OF MEDICAL EXAMINATION",
+      "price-check": "MEDICAL EXAMINATION PRICES",
+      "payment-method": "The hospital pays in the form of: ",
+      "detail-view": "View details",
+      "hide-price": "Hide price list"
     }
   }
 }

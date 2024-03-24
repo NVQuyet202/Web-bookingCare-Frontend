@@ -68,7 +68,7 @@
     "create-infor": "Tạo thông tin",
     "price": "Chọn giá",
     "payment": "Chọn phương thức thanh toán",
-    "province": "Chọn tỉnh thành",
+    "province": "Tỉnh thành",
     "clinic-name": "Tên phòng khám",
     "clinic-address": "Địa chỉ phòng khám",
     "note": "Ghi chú"
@@ -84,7 +84,12 @@
       "schedule": "Lịch khám",
       "no-schedule": "Bác sĩ không có lịch hẹn trong thời gian này, vui lòng chọn thời gian khác!",
       "choose": "Chọn",
-      "book-free": "và đặt (miễn phí)"
+      "book-free": "và đặt (miễn phí)",
+      "address-check": "ĐỊA CHỈ KHÁM",
+      "price-check": "Giá khám",
+      "payment-method": "Bệnh viện có thanh toán bằng hình thức: ",
+      "detail-view": "Xem chi tiết",
+      "hide-price": "Ẩn bảng giá"
     }
   }
 }

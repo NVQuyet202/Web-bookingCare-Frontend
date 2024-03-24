@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import "./DoctorSchedule.scss";
 import { LANGUAGES } from "../../../utils";
 import moment from "moment";
-import localization from "moment/locale/vi";
 import { getScheduleByDate } from "../../../services/userService";
 import { FormattedMessage } from "react-intl";
+import BookingModal from "./Modal/BookingModal";
 
 class DoctorSchedule extends Component {
   constructor(props) {
@@ -13,6 +13,8 @@ class DoctorSchedule extends Component {
     this.state = {
       allDays: [],
       allAvailableTime: [],
+      isOpenModalBooking: false,
+      dataScheduleTimeModal: {},
     };
   }
 
@@ -101,8 +103,26 @@ class DoctorSchedule extends Component {
     }
   };
 
+  handleClickScheduleTime = (time) => {
+    this.setState({
+      isOpenModalBooking: true,
+      dataScheduleTimeModal: time,
+    });
+  };
+
+  closeBookingModal = () => {
+    this.setState({
+      isOpenModalBooking: false,
+    });
+  };
+
   render() {
-    let { allDays, allAvailableTime } = this.state;
+    let {
+      allDays,
+      allAvailableTime,
+      isOpenModalBooking,
+      dataScheduleTimeModal,
+    } = this.state;
     let { language } = this.props;
     return (
       <Fragment>
@@ -140,6 +160,7 @@ class DoctorSchedule extends Component {
                       return (
                         <button
                           key={index}
+                          onClick={() => this.handleClickScheduleTime(item)}
                           className={
                             language === LANGUAGES.VI ? "btn-vie" : "btn-en"
                           }
@@ -166,6 +187,11 @@ class DoctorSchedule extends Component {
             </div>
           </div>
         </div>
+        <BookingModal
+          isOpenModal={isOpenModalBooking}
+          isCloseModal={this.closeBookingModal}
+          dataTime={dataScheduleTimeModal}
+        />
       </Fragment>
     );
   }
