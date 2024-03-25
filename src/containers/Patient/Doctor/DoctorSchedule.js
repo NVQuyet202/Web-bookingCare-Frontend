@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import "./DoctorSchedule.scss";
 import { LANGUAGES } from "../../../utils";
 import moment from "moment";
+import localization from "moment/locale/vi";
 import { getScheduleByDate } from "../../../services/userService";
 import { FormattedMessage } from "react-intl";
 import BookingModal from "./Modal/BookingModal";

@@ -42,7 +42,7 @@ const getDetailInforDoctor = (inputId) => {
 };
 
 const saveBulkScheduleDoctor = (data) => {
-  return axios.post("/api/bukk-create-schedule", data);
+  return axios.post("/api/bulk-create-schedule", data);
 };
 
 const getScheduleByDate = (doctorId, date) => {
@@ -57,6 +57,10 @@ const getExtraInforDoctorById = (doctorId) => {
 
 const getProfileById = (doctorId) => {
   return axios.get(`/api/get-profile-doctor-by-id?doctorId=${doctorId}`);
+};
+
+const postPatientBookAppointment = (data) => {
+  return axios.post("/api/patient-book-appointment", data);
 };
 export {
   handleLoginApi,
@@ -73,4 +77,5 @@ export {
   getScheduleByDate,
   getExtraInforDoctorById,
   getProfileById,
+  postPatientBookAppointment,
 };

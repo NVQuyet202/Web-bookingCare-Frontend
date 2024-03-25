@@ -89,6 +89,19 @@
       "payment-method": "The hospital pays in the form of: ",
       "detail-view": "View details",
       "hide-price": "Hide price list"
+    },
+    "booking-modal": {
+      "price": "Price: ",
+      "booking": "Free booking",
+      "fullname": "Full name",
+      "phone": "Phone Number",
+      "address": "Address",
+      "reason": "Reason for Examination",
+      "date": "Birthday",
+      "gender": "Gender",
+      "save": "Save",
+      "cancel": "Cancel",
+      "infor-booking": "Medical examination booking information"
     }
   }
 }
