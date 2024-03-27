@@ -1,34 +1,32 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Slider from "react-slick";
+import { FormattedMessage } from "react-intl";
 
 class About extends Component {
   render() {
     return (
       <div className="section-share section-about">
         <div className="section-about-header">
-          Truyền thông nói về Channel Hỏi Dân IT
+          <FormattedMessage id="home-page.About" />
         </div>
         <div className="section-about-content">
           <div className="content-left">
             <iframe
               width="90%"
               height="400px"
-              src="https://www.youtube.com/embed/147SkAVXEqM?list=PLncHg6Kn2JT6E38Z3kit9Hnif1xC_9VqI"
-              title="#51 Kết Thúc Design Giao Diện Clone BookingCare.vn 4 | React.JS Cho Người Mới Bắt Đầu"
+              src="https://www.youtube.com/embed/FyDQljKtWnI"
+              title="CÀ PHÊ KHỞI NGHIỆP VTV1 - BOOKINGCARE - HỆ THỐNG ĐẶT LỊCH KHÁM TRỰC TUYẾN"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
             ></iframe>
           </div>
           <div className="content-right">
             <p>
-              Khóa học Fullstack SERN (SQL, Express.js, React.js, Node.js) Web
-              Developer Miễn Phí với Hỏi Dân IT Trong video này, chúng ta sẽ
-              hoàn tất việc design giao diện theo trang bookingcare.vn. Chúng ta
-              sẽ hoàn thiện những phần đang còn dang dở, để từ video tiếp theo,
-              chúng ta sẽ bắt đầu làm về backend và react để tạo dữ liệu thật
-              cho trang home design này.
+              <FormattedMessage id="home-page.content-up" /> <br />
+              <FormattedMessage id="home-page.content-down" />
             </p>
           </div>
         </div>

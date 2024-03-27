@@ -58,7 +58,13 @@
   },
   "home-page": {
     "out-standing-doctor": "Bác sĩ nổi bật",
-    "more-info": "Xem thêm"
+    "more-info": "Xem thêm",
+    "specialty": "Chuyên khoa phổ biến",
+    "MedicalFacility": "Cơ sở y tế nổi bật",
+    "HandBook": "Cẩm nang",
+    "About": "Truyền thông nói về BookingCare",
+    "content-up": "BookingCare là Nền tảng Y tế chăm sóc sức khỏe toàn diện cung cấp nền tảng công nghệ giúp bệnh nhân dễ dàng lựa chọn dịch vụ y tế từ mạng lưới bác sĩ chuyên khoa giỏi, phòng khám, bệnh viện uy tín với thông tin đã xác thực và đặt lịch nhanh chóng.",
+    "content-down": "Đội ngũ chúng tôi luôn nỗ lực hết mình, với mong muốn bệnh nhân yên tâm lựa chọn bác sĩ chuyên khoa giỏi cho vấn đề sức khỏe của mình. Để việc đặt lịch khám và đi khám của bệnh nhân trở nên đơn giản, thuận tiện nhất có thể. Vì vậy, hệ thống đặt lịch khám trực tuyến BookingCare được xây dựng dựa trên những nguyên tắc cơ bản sau đây."
   },
   "manage-doctor": {
     "create": "Tạo thêm thông tin bác sĩ",
@@ -71,13 +77,22 @@
     "province": "Tỉnh thành",
     "clinic-name": "Tên phòng khám",
     "clinic-address": "Địa chỉ phòng khám",
-    "note": "Ghi chú"
+    "note": "Ghi chú",
+    "choose-specialty": "Chọn chuyên khoa",
+    "choose-clinic": "Chọn phòng khám"
   },
   "manage-schedule": {
     "title": "Quản lý lịch trình khám bệnh của bác sĩ",
     "choose-doctor": "Chọn bác sĩ:",
     "choose-schedule": "Chọn lịch khám:",
     "save-infor": "Lưu thông tin"
+  },
+  "manage-specialty": {
+    "title": "Quản lý chuyên khoa",
+    "name-specialty": "Tên chuyên khoa:",
+    "image-specialty": "Ảnh chuyên khoa:",
+    "save-infor": "Lưu thông tin",
+    "choose": "Chọn"
   },
   "patient": {
     "detail-doctor": {
