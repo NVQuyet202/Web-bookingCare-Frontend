@@ -56,6 +56,10 @@
     //   border: 1px solid black;
 
     .section-customize {
+      &:hover {
+        color: #45c3d2;
+      }
+
       .bg-image {
         height: 150px;
         width: 278px;
@@ -69,7 +73,9 @@
         }
 
         &.section-medical-facility {
-          background-image: url("../../assets/Medical-facility/benh-vien-thu-cuc.jpg");
+          // background-image: url("../../assets/Medical-facility/benh-vien-thu-cuc.jpg");
+          background-size: contain;
+          background-color: white;
         }
 
         &.section-outstanding-doctor {
@@ -194,4 +200,8 @@
       padding: 15px;
     }
   }
+}
+
+.doctor-name {
+  font-size: 16px;
 }

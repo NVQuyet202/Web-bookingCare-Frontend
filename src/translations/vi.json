@@ -20,7 +20,8 @@
     "child-3": "Khám tổng quát",
     "child-4": "Xét nghiệm y học",
     "child-5": "Sức khỏe tinh thần",
-    "child-6": "Khám nha khoa"
+    "child-6": "Khám nha khoa",
+    "child-7": "Tìm chuyên khoa khám bệnh"
   },
 
   "menu": {
@@ -39,7 +40,8 @@
     },
     "doctor": {
       "manage-schedule": "Quản lý lịch khám bệnh",
-      "schedule": "Lịch trình khám bệnh"
+      "schedule": "Lịch trình khám bệnh",
+      "manage-patient": "Quản lý bệnh nhân khám bệnh"
     }
   },
   "manage-user": {
@@ -94,6 +96,13 @@
     "save-infor": "Lưu thông tin",
     "choose": "Chọn"
   },
+  "manage-clinic": {
+    "title": "Quản lý phòng khám",
+    "name-clinic": "Tên phòng khám:",
+    "image-clinic": "Ảnh phòng khám:",
+    "save-infor": "Lưu thông tin",
+    "choose": "Chọn"
+  },
   "patient": {
     "detail-doctor": {
       "schedule": "Lịch khám",
@@ -117,7 +126,8 @@
       "gender": "Giới tính",
       "save": "Xác nhận",
       "cancel": "Hủy",
-      "infor-booking": "Thông tin đặt lịch khám bệnh"
+      "infor-booking": "Thông tin đặt lịch khám bệnh",
+      "more": "Xem thêm"
     }
   }
 }

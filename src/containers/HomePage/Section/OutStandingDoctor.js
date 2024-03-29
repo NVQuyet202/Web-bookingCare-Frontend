@@ -74,7 +74,7 @@ class OutStanding extends Component {
                           />
                         </div>
                         <div className="position text-center">
-                          <div>
+                          <div className="doctor-name">
                             {language === LANGUAGES.VI ? nameVi : nameEn}
                           </div>
                           <div>Cơ Xương Khớp 1</div>

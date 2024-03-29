@@ -18,7 +18,6 @@ class Specialty extends Component {
   async componentDidMount() {
     let res = await getAllSpecialty();
     if (res && res.errCode === 0) {
-      console.log(res.data);
       this.setState({
         dataSpecialty: res.data,
       });

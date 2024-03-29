@@ -19,7 +19,8 @@
     "child-3": "General examination",
     "child-4": "Medical testing",
     "child-5": "Mental health",
-    "child-6": "Dental examination"
+    "child-6": "Dental examination",
+    "child-7": "Find a medical specialist"
   },
 
   "menu": {
@@ -38,7 +39,8 @@
     },
     "doctor": {
       "manage-schedule": "Manage schedule",
-      "schedule": "Schedule"
+      "schedule": "Schedule",
+      "manage-patient": "Manage Doctor's Patient"
     }
   },
   "manage-user": {
@@ -93,6 +95,13 @@
     "save-info": "Save infor",
     "choose": "Choose"
   },
+  "manage-clinic": {
+    "title": "Clinic Management",
+    "name-clinic": "Clinic name:",
+    "image-clinic": "Clinic image:",
+    "save-infor": "Save infor",
+    "choose": "Choose"
+  },
   "patient": {
     "detail-doctor": {
       "schedule": "Schedule",
@@ -116,7 +125,8 @@
       "gender": "Gender",
       "save": "Save",
       "cancel": "Cancel",
-      "infor-booking": "Medical examination booking information"
+      "infor-booking": "Medical examination booking information",
+      "more": "More infor"
     }
   }
 }
