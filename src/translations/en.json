@@ -8,8 +8,9 @@
     "select-doctor": "Select doctor",
     "fee": "Examination package",
     "check-health": "General health examination",
-    "support": "Help",
-    "welcome": "Welcome"
+    "login": "Login",
+    "welcome": "Welcome",
+    "with": "Or Login with"
   },
   "banner": {
     "title-1": "MEDICAL FOUNDATION",
@@ -29,7 +30,7 @@
       "manage-doctor": "Manage doctor",
       "manage-admin": "Manage admin",
       "crud": "CRUD user",
-      "crud-redux": "CRUD redux",
+      "crud-redux": "Manage account",
       "clinic": "Clinic",
       "manage-clinic": "Manage Clinic",
       "speciality": "Speciality",
@@ -101,6 +102,19 @@
     "image-clinic": "Clinic image:",
     "save-infor": "Save infor",
     "choose": "Choose"
+  },
+  "manage-patient": {
+    "title": "MEDICAL PATIENT MANAGEMENT",
+    "id": "ID",
+    "choose-day": "Choose Examination Date:",
+    "time": "Time",
+    "name": "Full Name",
+    "phone": "Phone Number",
+    "address": "Address",
+    "gender": "Gender",
+    "confirm": "Confirm",
+    "action": "Action",
+    "nodata": "No data"
   },
   "patient": {
     "detail-doctor": {

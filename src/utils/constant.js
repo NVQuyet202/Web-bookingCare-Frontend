@@ -8,6 +8,8 @@ export const path = {
   DETAIL_SPECIALTY: "/detail-specialty/:id",
   DETAIL_CLINIC: "/detail-clinic/:id",
   VERIFY_BOOKING: "/verify-booking",
+  MANAGE_DOCTOR: "/doctor/manage-schedule",
+  MANAGE_ADMIN: "/system/manage-clinic",
 };
 
 export const LANGUAGES = {

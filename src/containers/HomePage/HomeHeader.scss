@@ -56,16 +56,14 @@
       align-items: center;
 
       .support {
-        padding-right: 50px;
+        margin-left: 15px;
+        // color: gray;
         display: flex;
         align-items: center;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
         cursor: pointer;
-
-        i {
-          margin-right: 5px;
-          font-size: 15px;
-          // cursor: pointer;
-        }
       }
 
       .flag {

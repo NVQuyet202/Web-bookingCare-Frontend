@@ -6,6 +6,7 @@ import { getDetailInforDoctor } from "../../../services/userService";
 import { LANGUAGES } from "../../../utils";
 import DoctorSchedule from "./DoctorSchedule";
 import DoctorExtraInfor from "./DoctorExtraInfor";
+import LoadingOverlay from "react-loading-overlay";
 
 class DetailDoctor extends Component {
   constructor(props) {
@@ -37,6 +38,12 @@ class DetailDoctor extends Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {}
+
+  BookingModalLoading = (id) => {
+    this.setState({
+      isShowLoading: true,
+    });
+  };
 
   render() {
     let { language } = this.props;
@@ -74,7 +81,10 @@ class DetailDoctor extends Component {
           </div>
           <div className="schedule-doctor">
             <div className="content-left">
-              <DoctorSchedule doctorIdFromParent={this.state.currentDoctorId} />
+              <DoctorSchedule
+                doctorIdFromParent={this.state.currentDoctorId}
+                loading={this.state.isShowLoading}
+              />
             </div>
             <div className="content-right">
               <DoctorExtraInfor

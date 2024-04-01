@@ -46,7 +46,7 @@ class Login extends Component {
 
       if (data && data.errCode == 0) {
         this.props.userLoginSuccess(data.user);
-        console.log("login succeed");
+        console.log("login succeed", data);
       }
     } catch (e) {
       if (e.response) {
@@ -75,9 +75,11 @@ class Login extends Component {
       <div className="login-background">
         <div className="login-container">
           <div className="login-content row">
-            <div className="col-12 text-login">Login</div>
+            <div className="col-12 text-login">
+              <FormattedMessage id="home-header.login" />
+            </div>
             <div className="col-12 form-group login-input">
-              <label>Username:</label>
+              <label>Email:</label>
               <input
                 type="text"
                 className="form-control"
@@ -87,7 +89,9 @@ class Login extends Component {
               />
             </div>
             <div className="col-12 form-group login-input">
-              <label>Password:</label>
+              <label>
+                <FormattedMessage id="manage-user.password" />:
+              </label>
               <div className="custom-input-password">
                 <input
                   type={this.state.isShowPassword ? "text" : "password"}
@@ -123,14 +127,14 @@ class Login extends Component {
                   this.handleLogin();
                 }}
               >
-                Login
+                <FormattedMessage id="home-header.login" />
               </button>
             </div>
-            <div className="col-12">
-              <span className="forgot-password">Forgot your password?</span>
-            </div>
+
             <div className="col-12 text-center mt-3">
-              <span className="text-other-login">Or Login with:</span>
+              <span className="text-other-login">
+                <FormattedMessage id="home-header.with" />
+              </span>
             </div>
             <div className="col-12 social-login">
               <i className="fab fa-google-plus-g google"></i>

@@ -8,6 +8,7 @@ import "./Header.scss";
 import { LANGUAGES, USER_ROLE } from "../../utils";
 import { FormattedMessage } from "react-intl";
 import _ from "lodash";
+import { withRouter } from "react-router";
 
 class Header extends Component {
   constructor(props) {
@@ -27,18 +28,35 @@ class Header extends Component {
       let role = userInfo.roleId;
       if (role === USER_ROLE.ADMIN) {
         menu = adminMenu;
+        this.handleViewManageAdmin();
       }
       if (role === USER_ROLE.DOCTOR) {
         menu = doctorMenu;
+        this.handleViewManageDoctor();
       }
     }
 
     this.setState({ menuApp: menu });
   }
 
+  handleViewManageDoctor = () => {
+    this.props.history.push(`/doctor/manage-schedule`);
+  };
+
+  handleViewManageAdmin = () => {
+    this.props.history.push(`/system/manage-clinic`);
+  };
+
+  goToHome = () => {
+    this.props.processLogout();
+    if (this.props.history) {
+      this.props.history.push(`/home`);
+    }
+  };
+
   render() {
     const { processLogout, language, userInfo } = this.props;
-    console.log("check userInfo: ", userInfo);
+    console.log("check userInfo: ", this.props);
     return (
       <div className="header-container">
         {/* thanh navigator */}
@@ -69,7 +87,7 @@ class Header extends Component {
           </span>
           <div
             className="btn btn-logout"
-            onClick={processLogout}
+            onClick={() => this.goToHome()}
             title="Log Out"
           >
             <i className="fas fa-sign-out-alt"></i>
@@ -96,4 +114,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

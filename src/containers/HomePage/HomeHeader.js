@@ -5,6 +5,7 @@ import { FormattedMessage } from "react-intl";
 import { LANGUAGES } from "../../utils/constant";
 import { changeLanguageApp } from "../../store/actions/appActions";
 import { withRouter } from "react-router";
+import * as actions from "../../store/actions";
 
 class HomeHeader extends Component {
   changeLanguage = (language) => {
@@ -14,6 +15,13 @@ class HomeHeader extends Component {
   returnToHome = () => {
     if (this.props.history) {
       this.props.history.push(`/home`);
+    }
+  };
+
+  goToLogin = () => {
+    this.props.processLogout();
+    if (this.props.history) {
+      this.props.history.push(`/login`);
     }
   };
 
@@ -75,10 +83,6 @@ class HomeHeader extends Component {
             </div>
 
             <div className="right-content">
-              <div className="support">
-                <i className="fas fa-question-circle fa-fw"></i>
-                <FormattedMessage id="home-header.support" />
-              </div>
               <div
                 className={
                   language === LANGUAGES.VI
@@ -94,6 +98,7 @@ class HomeHeader extends Component {
                   VN
                 </span>
               </div>
+
               <div
                 className={
                   language === LANGUAGES.EN
@@ -109,6 +114,10 @@ class HomeHeader extends Component {
                   EN
                 </span>
               </div>
+
+              <a className="support" onClick={() => this.goToLogin()}>
+                <FormattedMessage id="home-header.login" />
+              </a>
             </div>
           </div>
         </div>
@@ -195,6 +204,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    processLogout: () => dispatch(actions.processLogout()),
     changeLanguageAppRedux: (language) => dispatch(changeLanguageApp(language)),
   };
 };

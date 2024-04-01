@@ -8,8 +8,9 @@
     "select-doctor": "Chọn bác sĩ giỏi",
     "fee": "Gói khám",
     "check-health": "Khám sức khỏe tổng quát",
-    "support": "Hỗ trợ",
-    "welcome": "Xin chào"
+    "login": "Đăng nhập",
+    "welcome": "Xin chào",
+    "with": "Đăng nhập với"
   },
 
   "banner": {
@@ -30,7 +31,7 @@
       "manage-doctor": "Quản lý bác sĩ",
       "manage-admin": "Quản lý admin",
       "crud": "CRUD user",
-      "crud-redux": "CRUD redux",
+      "crud-redux": "Quản lý tài khoản",
       "clinic": "Phòng khám",
       "manage-clinic": "Quản lý phòng khám",
       "speciality": "Chuyên khoa",
@@ -102,6 +103,19 @@
     "image-clinic": "Ảnh phòng khám:",
     "save-infor": "Lưu thông tin",
     "choose": "Chọn"
+  },
+  "manage-patient": {
+    "title": "QUẢN LÝ BỆNH NHÂN KHÁM BỆNH",
+    "id": "STT",
+    "choose-day": "Chọn Ngày Khám:",
+    "time": "Thời gian",
+    "name": "Họ tên",
+    "phone": "Số điện thoại",
+    "address": "Địa chỉ",
+    "gender": "Giới tính",
+    "confirm": "Xác nhận",
+    "action": "Chức năng",
+    "nodata": "Không có dữ liệu"
   },
   "patient": {
     "detail-doctor": {

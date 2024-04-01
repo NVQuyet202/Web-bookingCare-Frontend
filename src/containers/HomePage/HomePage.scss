@@ -1,7 +1,7 @@
 .slick-prev {
   border: 2px solid #7d7d7d !important;
   left: -20px !important;
-  z-index: 1000 !important;
+  z-index: 100 !important;
   height: 48px !important;
   width: 44px !important;
   background-color: #fff !important;
@@ -44,7 +44,7 @@
   }
 
   &.section-outstanding-doctor {
-    background: url("../../assets/images/140311-background5.png");
+    background: #f5f5f5;
   }
 
   &.section-about {
@@ -156,7 +156,8 @@
     cursor: pointer;
 
     .customize-border {
-      border: 1px solid #f7d800;
+      background-color: white;
+      border-radius: 3px;
       padding: 20px;
     }
   }
@@ -204,4 +205,16 @@
 
 .doctor-name {
   font-size: 16px;
+}
+
+.home-footer {
+  color: white;
+  background-color: #64b9e5;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 15px 0;
+
+  a {
+    margin-left: 5px;
+  }
 }
