@@ -35,13 +35,23 @@ class OutStanding extends Component {
     let arrDoctors = this.state.arrDoctors;
 
     return (
-      <div className="section-share section-outstanding-doctor">
+      <div
+        id="outstanding"
+        className="section-share section-outstanding-doctor"
+      >
         <div className="section-container">
           <div className="section-header">
             <span className="title-section">
               <FormattedMessage id="home-page.out-standing-doctor" />
             </span>
-            <button className="btn-section">
+            <button
+              className="btn-section"
+              style={{
+                borderRadius: "10px",
+                background: "#daf3f6",
+                color: "#34929e",
+              }}
+            >
               <FormattedMessage id="home-page.more-info" />
             </button>
           </div>
@@ -63,6 +73,9 @@ class OutStanding extends Component {
                       className="section-customize"
                       key={index}
                       onClick={() => this.handleViewDetailDoctor(item)}
+                      style={{
+                        borderRadius: "10px",
+                      }}
                     >
                       <div className="customize-border">
                         <div className="outer-bg">

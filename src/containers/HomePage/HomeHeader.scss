@@ -54,6 +54,8 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
+      position: absolute;
+      right: 40px;
 
       .support {
         margin-left: 15px;
@@ -107,14 +109,29 @@
 }
 
 .home-header-banner {
-  background: url("../../assets/images/bookingcare-cove.jpg") no-repeat;
+  background-color: white;
 
-  height: 525px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  opacity: 0.95;
+  padding: 20px 130px 70px;
+
+  .img-slider {
+    border-radius: 20px !important;
+  }
+
+  .slick-prev {
+    display: none !important;
+  }
+
+  .slick-next {
+    display: none !important;
+  }
+  // background: url("../../assets/images/bookingcare-cove.jpg") no-repeat;
+
+  // height: 525px;
+  // background-size: cover;
+  // background-position: center;
+  // display: flex;
+  // flex-direction: column;
+  // opacity: 0.95;
 
   .content-up {
     height: 65%;

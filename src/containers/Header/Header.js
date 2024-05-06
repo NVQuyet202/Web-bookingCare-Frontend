@@ -40,7 +40,7 @@ class Header extends Component {
   }
 
   handleViewManageDoctor = () => {
-    this.props.history.push(`/doctor/manage-schedule`);
+    this.props.history.push(`/doctor/manage-patient`);
   };
 
   handleViewManageAdmin = () => {
@@ -55,8 +55,7 @@ class Header extends Component {
   };
 
   render() {
-    const { processLogout, language, userInfo } = this.props;
-    console.log("check userInfo: ", this.props);
+    const { language, userInfo } = this.props;
     return (
       <div className="header-container">
         {/* thanh navigator */}

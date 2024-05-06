@@ -174,7 +174,7 @@ class BookingModal extends Component {
                 <i class="fas fa-times fa-fw"></i>
               </span>
             </div>
-            <div className="booking-modal-body">
+            <div className="booking-modal-body" style={{ padding: "20px" }}>
               <div className="doctor-infor">
                 <ProfileDoctor
                   doctorId={doctorId}
@@ -185,7 +185,7 @@ class BookingModal extends Component {
                 />
               </div>
               <div className="row">
-                <div className="col-6 form group">
+                <div className="col-6 form-group">
                   <label>
                     <FormattedMessage id="patient.booking-modal.fullname" />
                   </label>
@@ -197,7 +197,7 @@ class BookingModal extends Component {
                     }
                   />
                 </div>
-                <div className="col-6 form group">
+                <div className="col-6 form-group">
                   <label>
                     <FormattedMessage id="patient.booking-modal.phone" />
                   </label>
@@ -209,7 +209,7 @@ class BookingModal extends Component {
                     }
                   />
                 </div>
-                <div className="col-6 form group">
+                <div className="col-6 form-group">
                   <label>Email</label>
                   <input
                     className="form-control"
@@ -219,7 +219,7 @@ class BookingModal extends Component {
                     }
                   />
                 </div>
-                <div className="col-6 form group">
+                <div className="col-6 form-group">
                   <label>
                     <FormattedMessage id="patient.booking-modal.address" />
                   </label>
@@ -231,7 +231,7 @@ class BookingModal extends Component {
                     }
                   />
                 </div>
-                <div className="col-12 form group">
+                <div className="col-12 form-group">
                   <label>
                     <FormattedMessage id="patient.booking-modal.reason" />
                   </label>
@@ -243,7 +243,7 @@ class BookingModal extends Component {
                     }
                   />
                 </div>
-                <div className="col-6 form group">
+                <div className="col-6 form-group">
                   <label>
                     <FormattedMessage id="patient.booking-modal.date" />
                   </label>
@@ -254,7 +254,7 @@ class BookingModal extends Component {
                   />
                 </div>
 
-                <div className="col-6 form group">
+                <div className="col-6 form-group">
                   <label>
                     <FormattedMessage id="patient.booking-modal.gender" />
                   </label>

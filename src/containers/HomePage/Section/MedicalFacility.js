@@ -36,13 +36,23 @@ class MedicalFacility extends Component {
   render() {
     let { dataClinic } = this.state;
     return (
-      <div className="section-share section-medical-facility">
+      <div
+        id="MedicalFacility"
+        className="section-share section-medical-facility"
+      >
         <div className="section-container">
           <div className="section-header">
             <span className="title-section">
               <FormattedMessage id="home-page.MedicalFacility" />
             </span>
-            <button className="btn-section">
+            <button
+              className="btn-section"
+              style={{
+                borderRadius: "10px",
+                background: "#daf3f6",
+                color: "#34929e",
+              }}
+            >
               <FormattedMessage id="home-page.more-info" />
             </button>
           </div>
@@ -60,6 +70,7 @@ class MedicalFacility extends Component {
                       <div
                         className="bg-image section-medical-facility"
                         style={{
+                          borderRadius: "10px",
                           backgroundImage: `url(${item.image})`,
                         }}
                       />

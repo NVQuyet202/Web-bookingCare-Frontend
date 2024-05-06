@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import HomeHeader from "../HomeHeader";
 import { FormattedMessage } from "react-intl";
 import "./Specialty.scss";
 import Slider from "react-slick";
@@ -39,13 +38,20 @@ class Specialty extends Component {
     let { dataSpecialty } = this.state;
 
     return (
-      <div className="section-share section-specialty">
+      <div id="speciality" className="section-share section-specialty">
         <div className="section-container">
           <div className="section-header">
             <span className="title-section">
               <FormattedMessage id="home-page.specialty" />
             </span>
-            <button className="btn-section">
+            <button
+              className="btn-section"
+              style={{
+                borderRadius: "10px",
+                background: "#daf3f6",
+                color: "#34929e",
+              }}
+            >
               <FormattedMessage id="home-page.more-info" />
             </button>
           </div>
@@ -61,9 +67,10 @@ class Specialty extends Component {
                       onClick={() => this.handleViewDetailSpecialty(item)}
                     >
                       <div
-                        className="bg-image section-specialty"
+                        className="bg-image section-specialty "
                         style={{
                           backgroundImage: `url(${item.image})`,
+                          borderRadius: "10px",
                         }}
                       />
                       <div className="specialty-name">{item.name}</div>

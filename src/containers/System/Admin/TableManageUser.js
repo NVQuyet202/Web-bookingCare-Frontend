@@ -45,8 +45,8 @@ class TableManageUser extends Component {
   render() {
     let arrUsers = this.state.userRedux;
     return (
-      <Fragment>
-        <table id="TableManageUser">
+      <div style={{ paddingBottom: "50px" }}>
+        <table id="TableManageUser" style={{}}>
           <tbody>
             <tr>
               <th>Email</th>
@@ -74,13 +74,14 @@ class TableManageUser extends Component {
                     <td>{item.address}</td>
                     <td>
                       <button
-                        className="btn-edit"
+                        className="btn btn-success btn-edit"
                         onClick={() => this.handleEditUser(item)}
                       >
                         <i className="fas fa-edit fa-fw"></i>
                       </button>
                       <button
-                        className="btn-delete"
+                        style={{ marginLeft: "10px" }}
+                        className="btn btn-danger btn-delete"
                         onClick={() => this.handleDeleteUser(item)}
                       >
                         <i className="far fa-trash-alt fa-fw"></i>
@@ -92,12 +93,12 @@ class TableManageUser extends Component {
           </tbody>
         </table>
 
-        <MdEditor
+        {/* <MdEditor
           style={{ height: "500px" }}
           renderHTML={(text) => mdParser.render(text)}
           onChange={handleEditorChange}
-        />
-      </Fragment>
+        /> */}
+      </div>
     );
   }
 }

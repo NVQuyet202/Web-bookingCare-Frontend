@@ -6,8 +6,39 @@ import { LANGUAGES } from "../../utils/constant";
 import { changeLanguageApp } from "../../store/actions/appActions";
 import { withRouter } from "react-router";
 import * as actions from "../../store/actions";
+import { Image } from "antd";
+import Slider from "react-slick";
+import slider1 from "../../assets/slider1.png";
+import slider2 from "../../assets/slider2.png";
+import slider3 from "../../assets/slider3.jpg";
+import slider4 from "../../assets/slider4.png";
+import smoothscroll from "smoothscroll-polyfill";
+
+smoothscroll.polyfill();
 
 class HomeHeader extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      arrImages: [slider1, slider2, slider3, slider4],
+    };
+  }
+
+  async componentDidMount() {
+    if (this.props.dataModal) {
+      this.setState({
+        email: this.props.dataModal.email,
+      });
+    }
+  }
+
+  async componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.props.dataModal !== prevProps.dataModal) {
+      this.setState({
+        email: this.props.dataModal.email,
+      });
+    }
+  }
   changeLanguage = (language) => {
     this.props.changeLanguageAppRedux(language);
   };
@@ -25,8 +56,34 @@ class HomeHeader extends Component {
     }
   };
 
+  smoothScrollTo = (id) => {
+    // if (this.props.history) {
+    //   this.props.history.push(`/home`);
+    //   return;
+    // }
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  };
+
+  handleBackHome = () => {
+    if (this.props.history) {
+      this.returnToHome();
+    }
+  };
+
   render() {
+    console.log(this.props.history.action);
     let language = this.props.language;
+    let { arrImages } = this.state;
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2500,
+    };
+
     return (
       <React.Fragment>
         <div className="home-header-container">
@@ -35,54 +92,65 @@ class HomeHeader extends Component {
               <i className="fas fa-bars fa-fw"></i>
               <div
                 className="header-logo"
-                onClick={() => this.returnToHome()}
+                onClick={() => this.handleBackHome()}
               ></div>
             </div>
 
-            <div className="center-content">
-              <div className="child-content">
-                <div>
-                  <b>
-                    <FormattedMessage id="home-header.speciality" />
-                  </b>
+            {this.props.isShowMenu == true && (
+              <div className="center-content">
+                <div className="child-content">
+                  <div>
+                    <a
+                      href="#"
+                      onClick={() => this.smoothScrollTo("speciality")}
+                    >
+                      <FormattedMessage id="home-header.speciality" />
+                    </a>
+                  </div>
+                  <div className="subs-title">
+                    <FormattedMessage id="home-header.search-doctor" />
+                  </div>
                 </div>
-                <div className="subs-title">
-                  <FormattedMessage id="home-header.search-doctor" />
+                <div className="child-content">
+                  <div>
+                    <a
+                      href="#"
+                      onClick={() => this.smoothScrollTo("MedicalFacility")}
+                    >
+                      <FormattedMessage id="home-header.health-facility" />
+                    </a>
+                  </div>
+                  <div className="subs-title">
+                    <FormattedMessage id="home-header.choose-clinic" />
+                  </div>
+                </div>
+                <div className="child-content">
+                  <div>
+                    <a
+                      href="#"
+                      onClick={() => this.smoothScrollTo("outstanding")}
+                    >
+                      <FormattedMessage id="home-header.doctor" />
+                    </a>
+                  </div>
+                  <div className="subs-title">
+                    <FormattedMessage id="home-header.select-doctor" />
+                  </div>
+                </div>
+                <div className="child-content">
+                  <div>
+                    <a href="#" onClick={() => this.smoothScrollTo("home")}>
+                      <FormattedMessage id="home-header.fee" />
+                    </a>
+                  </div>
+                  <div className="subs-title">
+                    <FormattedMessage id="home-header.check-health" />
+                  </div>
                 </div>
               </div>
-              <div className="child-content">
-                <div>
-                  <b>
-                    <FormattedMessage id="home-header.health-facility" />
-                  </b>
-                </div>
-                <div className="subs-title">
-                  <FormattedMessage id="home-header.choose-clinic" />
-                </div>
-              </div>
-              <div className="child-content">
-                <div>
-                  <b>
-                    <FormattedMessage id="home-header.doctor" />
-                  </b>
-                </div>
-                <div className="subs-title">
-                  <FormattedMessage id="home-header.select-doctor" />
-                </div>
-              </div>
-              <div className="child-content">
-                <div>
-                  <b>
-                    <FormattedMessage id="home-header.fee" />
-                  </b>
-                </div>
-                <div className="subs-title">
-                  <FormattedMessage id="home-header.check-health" />
-                </div>
-              </div>
-            </div>
+            )}
 
-            <div className="right-content">
+            <div style={{ float: "left" }} className="right-content">
               <div
                 className={
                   language === LANGUAGES.VI
@@ -122,71 +190,21 @@ class HomeHeader extends Component {
           </div>
         </div>
         {this.props.isShowBanner === true && (
-          <div className="home-header-banner">
-            <div className="content-up">
-              <div className="title-1">
-                <FormattedMessage id="banner.title-1" />
-              </div>
-              <div className="title-2">
-                <FormattedMessage id="banner.title-2" />
-              </div>
-              <div className="search">
-                <i className="fas fa-search"></i>
-                <input type="text" placeholder="Search" />
-              </div>
-            </div>
-            <div className="content-down">
-              <div className="options">
-                <div className="option-child">
-                  <div className="icon-child">
-                    <i class="far fa-hospital"></i>
-                  </div>
-                  <div className="text-child">
-                    <FormattedMessage id="banner.child-1" />
-                  </div>
-                </div>
-                <div className="option-child">
-                  <div className="icon-child">
-                    <i class="fas fa-mobile-alt"></i>
-                  </div>
-                  <div className="text-child">
-                    <FormattedMessage id="banner.child-2" />
-                  </div>
-                </div>
-                <div className="option-child">
-                  <div className="icon-child">
-                    <i class="fas fa-ambulance"></i>
-                  </div>
-                  <div className="text-child">
-                    <FormattedMessage id="banner.child-3" />
-                  </div>
-                </div>
-                <div className="option-child">
-                  <div className="icon-child">
-                    <i class="fas fa-flask"></i>
-                  </div>
-                  <div className="text-child">
-                    <FormattedMessage id="banner.child-4" />
-                  </div>
-                </div>
-                <div className="option-child">
-                  <div className="icon-child">
-                    <i class="fas fa-hand-holding-heart"></i>
-                  </div>
-                  <div className="text-child">
-                    <FormattedMessage id="banner.child-5" />
-                  </div>
-                </div>
-                <div className="option-child">
-                  <div className="icon-child">
-                    <i class="fas fa-user-md"></i>
-                  </div>
-                  <div className="text-child">
-                    <FormattedMessage id="banner.child-6" />
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div id="home" className="home-header-banner">
+            <Slider {...settings} className="slider-home">
+              {arrImages.map((image) => {
+                return (
+                  <Image
+                    className="img-slider"
+                    src={image}
+                    alt="slider"
+                    preview={false}
+                    width="100%"
+                    height="450px"
+                  />
+                );
+              })}
+            </Slider>
           </div>
         )}
       </React.Fragment>

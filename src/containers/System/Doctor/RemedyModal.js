@@ -69,7 +69,7 @@ class RemedyModal extends Component {
           centered
         >
           <div className="modal-header">
-            <h5 className="modal-title">Modal title</h5>
+            <h5 className="modal-title">Xác nhận lịch hẹn</h5>
             <button
               type="button"
               className="close"
@@ -104,10 +104,10 @@ class RemedyModal extends Component {
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={() => this.handleSendRemedy()}>
-              Do Something
+              Gửi
             </Button>
             <Button color="secondary" onClick={closeRemedyModal}>
-              Cancel
+              Hủy
             </Button>
           </ModalFooter>
         </Modal>

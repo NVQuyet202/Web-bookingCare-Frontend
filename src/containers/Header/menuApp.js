@@ -17,20 +17,8 @@ export const adminMenu = [
       },
       {
         name: "menu.doctor.schedule",
-        link: "/doctor/manage-schedule",
+        link: "/system/manage-schedule",
       },
-      // name: "menu.admin.manage-user",
-      // subMenus: [
-      //   {
-      //     name: "menu.system.system-administrator.user-manage",
-      //     link: "/system/user-manage",
-      //   },
-      //   {
-      //     name: "menu.system.system-administrator.user-redux",
-      //     link: "/system/user-redux",
-      //   },
-      // ],
-      // },
     ],
   },
   //Quản lý phòng khám
