@@ -71,7 +71,6 @@ class HomeHeader extends Component {
   };
 
   render() {
-    console.log(this.props.history.action);
     let language = this.props.language;
     let { arrImages } = this.state;
     const settings = {
@@ -97,7 +96,7 @@ class HomeHeader extends Component {
             </div>
 
             {this.props.isShowMenu == true && (
-              <div className="center-content">
+              <div className="center-content" style={{ padding: "0 50px" }}>
                 <div className="child-content">
                   <div>
                     <a
@@ -137,7 +136,7 @@ class HomeHeader extends Component {
                     <FormattedMessage id="home-header.select-doctor" />
                   </div>
                 </div>
-                <div className="child-content">
+                {/* <div className="child-content">
                   <div>
                     <a href="#" onClick={() => this.smoothScrollTo("home")}>
                       <FormattedMessage id="home-header.fee" />
@@ -146,7 +145,7 @@ class HomeHeader extends Component {
                   <div className="subs-title">
                     <FormattedMessage id="home-header.check-health" />
                   </div>
-                </div>
+                </div> */}
               </div>
             )}
 

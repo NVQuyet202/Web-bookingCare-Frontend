@@ -36,6 +36,7 @@ class Specialty extends Component {
   render() {
     let { language } = this.props;
     let { dataSpecialty } = this.state;
+    console.log(dataSpecialty);
 
     return (
       <div id="speciality" className="section-share section-specialty">

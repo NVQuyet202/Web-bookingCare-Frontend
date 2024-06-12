@@ -1,36 +1,38 @@
 import React, { Component, Fragment } from "react";
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
-import "./TableManageUser.scss";
+import "./TableManageSpecialty.scss";
 import * as actions from "../../../store/actions";
 import "react-markdown-editor-lite/lib/index.css";
 
-function handleEditorChange({ html, text }) {
-  console.log("handleEditorChange", html, text);
-}
+// function handleEditorChange({ html, text }) {
+//   console.log("handleEditorChange", html, text);
+// }
 
-class TableManageUser extends Component {
+class TableManageSpecialty extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userRedux: [],
+      listSpecialty: [],
     };
   }
 
-  componentDidMount() {
-    this.props.fetchUserRedux();
+  async componentDidMount() {
+    this.setState({
+      listSpecialty: this.props.dataSpecialty,
+    });
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    if (prevProps.listUsers !== this.props.listUsers) {
+    if (prevProps.dataSpecialty !== this.props.dataSpecialty) {
       this.setState({
-        userRedux: this.props.listUsers,
+        listSpecialty: this.props.dataSpecialty,
       });
     }
   }
 
-  handleDeleteUser = (user) => {
-    this.props.deleteUserRedux(user.id);
+  handleDelete = async (user) => {
+    this.props.handleDeleteSpecialty(user.id);
   };
 
   handleEditUser = (user) => {
@@ -38,35 +40,28 @@ class TableManageUser extends Component {
   };
 
   render() {
-    let arrUsers = this.state.userRedux;
+    let listSpecialty = this.state.listSpecialty;
     return (
       <div style={{ paddingBottom: "50px" }}>
         <table id="TableManageUser" style={{}}>
           <tbody>
             <tr>
-              <th>Email</th>
               <th>
-                <FormattedMessage id="manage-user.firstname" />
+                <FormattedMessage id="manage-clinic.stt" />
               </th>
               <th>
-                <FormattedMessage id="manage-user.lastname" />
+                <FormattedMessage id="manage-specialty.name-specialty" />
               </th>
-              <th>
-                <FormattedMessage id="manage-user.address" />
-              </th>
-              <th>
-                <FormattedMessage id="manage-user.action" />
-              </th>
+              <th>Actions</th>
             </tr>
-            {arrUsers &&
-              arrUsers.length > 0 &&
-              arrUsers.map((item, index) => {
+
+            {listSpecialty &&
+              listSpecialty.length > 0 &&
+              listSpecialty.map((item, index) => {
                 return (
                   <tr>
-                    <td>{item.email}</td>
-                    <td>{item.firstName}</td>
-                    <td>{item.lastName}</td>
-                    <td>{item.address}</td>
+                    <td>{index + 1}</td>
+                    <td>{item.name}</td>
                     <td>
                       <button
                         className="btn btn-success btn-edit"
@@ -77,7 +72,7 @@ class TableManageUser extends Component {
                       <button
                         style={{ marginLeft: "10px" }}
                         className="btn btn-danger btn-delete"
-                        onClick={() => this.handleDeleteUser(item)}
+                        onClick={() => this.handleDelete(item)}
                       >
                         <i className="far fa-trash-alt fa-fw"></i>
                       </button>
@@ -100,9 +95,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchUserRedux: () => dispatch(actions.fetchAllUsersStart()),
-    deleteUserRedux: (id) => dispatch(actions.deleteUser(id)),
+    fetchAllSpecialty: () => dispatch(actions.fetchAllSpecialty()),
+    deleteSpecialty: (id) => dispatch(actions.deleteSpecialty(id)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TableManageUser);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TableManageSpecialty);

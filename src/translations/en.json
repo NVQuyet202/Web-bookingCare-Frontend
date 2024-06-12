@@ -64,8 +64,8 @@
     "specialty": "Popular Specialty",
     "MedicalFacility": "Outstanding Medical Facility",
     "HandBook": "Hand Book",
-    "About": "Media talks about BookingCare",
-    "content-up": "BookingCare is a comprehensive healthcare platform that provides a technology platform to help patients easily choose medical services from a network of good specialists, reputable clinics and hospitals with verified information. real and quick to schedule.",
+    "About": "Media talks about NVQ",
+    "content-up": "NVQ is a comprehensive healthcare platform that provides a technology platform to help patients easily choose medical services from a network of good specialists, reputable clinics and hospitals with verified information. real and quick to schedule.",
     "content-down": "Our team always tries its best, with the hope that patients can feel secure in choosing a good specialist for their health problems. To make patient appointment and examination as simple and convenient as possible. Therefore, the BookingCare online medical appointment booking system is built based on the following basic principles."
   },
   "manage-doctor": {
@@ -93,15 +93,16 @@
     "title": "Specialty Management",
     "name-specialty": "Specialty name:",
     "image-specialty": "Image specialty:",
-    "save-info": "Save infor",
+    "save-infor": "Save infor",
     "choose": "Choose"
   },
   "manage-clinic": {
     "title": "Clinic Management",
-    "name-clinic": "Clinic name:",
-    "image-clinic": "Clinic image:",
+    "name-clinic": "Clinic name",
+    "image-clinic": "Clinic image",
     "save-infor": "Save infor",
-    "choose": "Choose"
+    "choose": "Choose",
+    "stt": "ID"
   },
   "manage-patient": {
     "title": "MEDICAL PATIENT MANAGEMENT",

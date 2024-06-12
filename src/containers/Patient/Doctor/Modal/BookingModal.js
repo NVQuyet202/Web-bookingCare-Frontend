@@ -28,6 +28,7 @@ class BookingModal extends Component {
       doctorId: "",
       timeType: "",
       genders: "",
+      id: "",
     };
   }
 
@@ -108,6 +109,7 @@ class BookingModal extends Component {
       language: this.props.language,
       timeString: timeString,
       doctorName: doctorName,
+      timteId: this.props.dataTime.id,
     });
 
     if (res && res.errCode === 0) {
@@ -157,6 +159,7 @@ class BookingModal extends Component {
       doctorId = dataTime.doctorId;
     }
     let yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
+
     return (
       <Fragment>
         <Modal

@@ -16,6 +16,7 @@ class DoctorSchedule extends Component {
       allAvailableTime: [],
       isOpenModalBooking: false,
       dataScheduleTimeModal: {},
+      setStyle: false,
     };
   }
 
@@ -108,7 +109,6 @@ class DoctorSchedule extends Component {
           allAvailableTime: res.data ? res.data : [],
         });
       }
-      console.log("Check res", res);
     }
   };
 
@@ -119,9 +119,16 @@ class DoctorSchedule extends Component {
     });
   };
 
-  closeBookingModal = () => {
+  closeBookingModal = async () => {
+    this.setState({ isOpenModalBooking: false });
+    let allDays = this.getArrDays(this.props.language);
+    let res = await getScheduleByDate(
+      this.props.doctorIdFromParent,
+      allDays[0].value
+    );
+
     this.setState({
-      isOpenModalBooking: false,
+      allAvailableTime: res.data ? res.data : [],
     });
   };
 
@@ -169,7 +176,19 @@ class DoctorSchedule extends Component {
                       return (
                         <button
                           key={index}
-                          onClick={() => this.handleClickScheduleTime(item)}
+                          style={
+                            item.currentNumber === 1
+                              ? {
+                                  backgroundColor: "red",
+                                  color: "#fff",
+                                }
+                              : {}
+                          }
+                          onClick={
+                            item.currentNumber === 1
+                              ? null
+                              : () => this.handleClickScheduleTime(item)
+                          }
                           className={
                             language === LANGUAGES.VI ? "btn-vie" : "btn-en"
                           }

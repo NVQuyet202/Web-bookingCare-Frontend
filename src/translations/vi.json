@@ -65,8 +65,8 @@
     "specialty": "Chuyên khoa phổ biến",
     "MedicalFacility": "Cơ sở y tế nổi bật",
     "HandBook": "Cẩm nang",
-    "About": "Truyền thông nói về BookingCare",
-    "content-up": "BookingCare là Nền tảng Y tế chăm sóc sức khỏe toàn diện cung cấp nền tảng công nghệ giúp bệnh nhân dễ dàng lựa chọn dịch vụ y tế từ mạng lưới bác sĩ chuyên khoa giỏi, phòng khám, bệnh viện uy tín với thông tin đã xác thực và đặt lịch nhanh chóng.",
+    "About": "Truyền thông nói về NVQ",
+    "content-up": "NVQ là Nền tảng Y tế chăm sóc sức khỏe toàn diện cung cấp nền tảng công nghệ giúp bệnh nhân dễ dàng lựa chọn dịch vụ y tế từ mạng lưới bác sĩ chuyên khoa giỏi, phòng khám, bệnh viện uy tín với thông tin đã xác thực và đặt lịch nhanh chóng.",
     "content-down": "Đội ngũ chúng tôi luôn nỗ lực hết mình, với mong muốn bệnh nhân yên tâm lựa chọn bác sĩ chuyên khoa giỏi cho vấn đề sức khỏe của mình. Để việc đặt lịch khám và đi khám của bệnh nhân trở nên đơn giản, thuận tiện nhất có thể. Vì vậy, hệ thống đặt lịch khám trực tuyến BookingCare được xây dựng dựa trên những nguyên tắc cơ bản sau đây."
   },
   "manage-doctor": {
@@ -99,10 +99,11 @@
   },
   "manage-clinic": {
     "title": "Quản lý phòng khám",
-    "name-clinic": "Tên phòng khám:",
-    "image-clinic": "Ảnh phòng khám:",
+    "name-clinic": "Tên phòng khám",
+    "image-clinic": "Ảnh phòng khám",
     "save-infor": "Lưu thông tin",
-    "choose": "Chọn"
+    "choose": "Chọn",
+    "stt": "STT"
   },
   "manage-patient": {
     "title": "QUẢN LÝ BỆNH NHÂN KHÁM BỆNH",

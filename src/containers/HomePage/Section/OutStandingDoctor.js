@@ -33,6 +33,7 @@ class OutStanding extends Component {
   render() {
     let { language } = this.props;
     let arrDoctors = this.state.arrDoctors;
+    console.log(arrDoctors);
 
     return (
       <div

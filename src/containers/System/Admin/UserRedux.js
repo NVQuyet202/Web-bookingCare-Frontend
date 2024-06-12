@@ -111,7 +111,6 @@ class UserRedux extends Component {
   handleSaveUser = () => {
     let isValid = this.checkValidateInput();
     if (isValid === false) return;
-    console.log(this.state.role);
     let { action } = this.state;
     if (action === CRUD_ACTIONS.CREATE) {
       this.props.createNewUser({
